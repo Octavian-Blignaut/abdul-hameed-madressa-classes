@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdul Hameed Madressa — Student App</title>
+<meta name="description" content="Class schedule, notices and lessons for Abdul Hameed Madressa students.">
+<meta name="theme-color" content="#063d2a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="mark">☪</span><span>Abdul Hameed<small>Student App</small></span></a>
+  <button id="installBtn" class="install" hidden>⬇ Install</button>
+</header>
+
+<main id="app">
+  <!-- HOME -->
+  <section class="screen active" id="screen-home">
+    <div class="hero">
+      <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <h1>Assalamu alaikum!</h1><p>Learn Islam · Live Islam · Love Islam</p>
+    </div>
+    <h2>📌 Latest Notice</h2><div id="homeNotice"></div>
+    <h2>🗓️ Classes</h2><div id="homeSchedule" class="cards"></div>
+    <h2>📖 Continue Learning</h2><div id="homeLessons" class="cards"></div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="screen" id="screen-schedule">
+    <h1>Class Schedule</h1>
+    <div class="chips" id="gradeChips"></div>
+    <div id="scheduleList" class="cards"></div>
+    <p class="muted">Times/venue to be confirmed by the Madressa.</p>
+  </section>
+
+  <!-- NOTICES -->
+  <section class="screen" id="screen-notices">
+    <h1>Notice Board</h1><div id="noticeList" class="cards"></div>
+  </section>
+
+  <!-- LEARN -->
+  <section class="screen" id="screen-learn">
+    <h1>Learn</h1>
+    <div class="chips" id="learnChips"></div>
+    <div id="lessonList" class="cards"></div>
+  </section>
+
+  <!-- LESSON READER -->
+  <section class="screen" id="screen-lesson">
+    <button class="back" onclick="show('learn')">← All lessons</button>
+    <article id="lessonBody" class="lesson"></article>
+    <label class="done"><input type="checkbox" id="doneCheck"> Mark lesson as done ✓</label>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="screen" id="screen-about">
+    <h1>About</h1>
+    <div class="card"><h3>Abdul Hameed Madressa Classes & Arabic Tuition</h3>
+      <p>Grade 1 to 12 & Adult Classes — for all ages.</p>
+      <p>📞 Phone/WhatsApp: <b>TBC</b><br>📍 Venue: <b>TBC</b></p>
+      <a class="btn" href="../index.html">Visit our website →</a>
+      <a class="btn gold" href="../index.html#enrol">Enrol now →</a>
+    </div>
+    <p class="muted">Your progress (✓ done lessons) is saved only on this device. No account, no tracking.</p>
+  </section>
+</main>
+
+<nav class="tabbar">
+  <button data-go="home" class="active">🏠<span>Home</span></button>
+  <button data-go="schedule">🗓️<span>Schedule</span></button>
+  <button data-go="notices">📌<span>Notices</span></button>
+  <button data-go="learn">📖<span>Learn</span></button>
+  <button data-go="about">☪<span>About</span></button>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>
